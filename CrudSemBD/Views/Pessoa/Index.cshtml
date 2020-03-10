@@ -1,0 +1,52 @@
+﻿@model List<CrudSemBD.ViewModel.PessoaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pessoas</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nome:
+        </th>
+        <th>
+            Sexo:
+        </th>
+        <th>
+            Data nascimento:
+        </th>
+        <th>
+            CPF:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nmPessoa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricaoSexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pessoaCPF)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new {  id=item.idPessoa }) |
+            @Html.ActionLink("Detalhar", "Details", new { id=item.idPessoa }) |
+            @Html.ActionLink("Deletar", "Delete", new {  id=item.idPessoa })
+        </td>
+    </tr>
+}
+
+</table>

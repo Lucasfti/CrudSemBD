@@ -1,0 +1,49 @@
+﻿@model CrudSemBD.ViewModel.PessoaViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Informações - Pessoa</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nmPessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nmPessoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoSexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoSexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoaCPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pessoaCPF)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

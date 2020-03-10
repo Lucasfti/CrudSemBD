@@ -1,0 +1,54 @@
+﻿@model CrudSemBD.ViewModel.PessoaViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Você tem certeza que deseja deletar esta Pessoa?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nmPessoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nmPessoa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.descricaoSexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricaoSexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoaCPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pessoaCPF)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.HiddenFor(model => model.idPessoa)
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
